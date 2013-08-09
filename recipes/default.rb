@@ -7,7 +7,7 @@ template "/etc/hekad.toml" do
 	source "hekad.toml.erb"
 	owner "root"
 	group "root"
-	notifies :restart, "service[heka]", :immediately
+	notifies :restart, "service[heka]", :delayed
 end
 
 template "/etc/init/heka.conf" do
