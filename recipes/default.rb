@@ -29,7 +29,7 @@ end
 
 logrotate_app 'hekad' do
   cookbook  'logrotate'
-  path      '/var/log/heka.log'
+  path      '/var/log/hekad.log'
   missingok true
   frequency 'weekly'
   rotate    4
