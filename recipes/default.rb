@@ -26,3 +26,12 @@ service "heka" do
 	action [ :enable , :start ]
 	provider Chef::Provider::Service::Upstart
 end
+
+logrotate_app 'hekad' do
+  cookbook  'logrotate'
+  path      '/var/log/hekad.log'
+  missingok true
+  frequency 'weekly'
+  rotate    4
+  create    '644 root root'
+end
