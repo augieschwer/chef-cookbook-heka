@@ -2,6 +2,12 @@
 
 This file is used to list changes made in each version of heka.
 
+## 0.2.0
+
+- Install heakd 0.5.1 from dpkg from the official Heka release URL.
+- Cleanup the README a bit to be more helpful.
+- Change configuration from a single file to a directory that will be read for configuration files.
+
 ## 0.1.1:
 
 * Fixed issue with the service call being issued before the files were in place: https://github.com/augieschwer/chef-cookbook-heka/issues/1
