@@ -20,10 +20,14 @@ Attributes
 
 ### Default
 
-node['heka']['download']['mirror'] = 'https://github.com/mozilla-services/heka/releases/download/v'
-node['heka']['download']['version'] = '0.5.1'
-node['heka']['download']['arch'] = 'amd64'
-node['heka']['download']['extension'] = 'deb'
+`node['heka']['download']['mirror'] = 'https://github.com/mozilla-services/heka/releases/download/v'`
+
+`node['heka']['download']['version'] = '0.5.1'`
+
+`node['heka']['download']['arch'] = 'amd64'`
+
+`node['heka']['download']['extension'] = 'deb'`
+
 
 Usage
 =====
