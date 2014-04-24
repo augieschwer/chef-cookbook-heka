@@ -9,7 +9,7 @@ if platform?("debian", "ubuntu")
 	Chef::Log.info("Installing Heka from #{node['heka']['download']['mirror']}#{node['heka']['download']['version']}/heka_#{node['heka']['download']['version']}_#{node['heka']['download']['arch']}.#{node['heka']['download']['extension']}")
 	remote_file "/tmp/heka_#{node['heka']['download']['version']}_#{node['heka']['download']['arch']}.#{node['heka']['download']['extension']}" do
 		source "#{node['heka']['download']['mirror']}#{node['heka']['download']['version']}/heka_#{node['heka']['download']['version']}_#{node['heka']['download']['arch']}.#{node['heka']['download']['extension']}"
-		not_if "dpkg-query -l 'heka'
+		not_if "dpkg-query -l 'heka'"
 	end
 
 	dpkg_package "heka" do
