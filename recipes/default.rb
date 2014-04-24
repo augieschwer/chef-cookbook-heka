@@ -15,6 +15,7 @@ if platform?("debian", "ubuntu")
 	dpkg_package "heka" do
 		source "/tmp/heka_#{node['heka']['download']['version']}_#{node['heka']['download']['arch']}.#{node['heka']['download']['extension']}"
 		action :install
+		not_if "dpkg-query -l 'heka'"
 	end
 
 	directory "/etc/heka" do
