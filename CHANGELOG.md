@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of heka.
 
+## 0.2.1
+
+- [ISSUE-4] "Don't download the deb package if heka is already installed."
+
 ## 0.2.0
 
 - Install heakd 0.5.1 from dpkg from the official Heka release URL.
