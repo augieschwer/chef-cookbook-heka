@@ -1,7 +1,8 @@
 #!/usr/bin/env rake
 
-desc "do nothing"
-
-task :default do
-	  puts "Hello World!"
+desc "Run foodcritic"
+task :foodcritic do
+	sh "foodcritic --epic-fail any . "
 end
+
+task :default => 'foodcritic'
