@@ -14,3 +14,7 @@ suites:
     run_list:
       - recipe[heka::default]
     attributes:
+  - name: source
+    run_list:
+      - recipe[heka::source]
+    attributes:
