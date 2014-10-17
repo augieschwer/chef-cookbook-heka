@@ -1,0 +1,9 @@
+DEPENDENCIES
+  heka
+    path: .
+    metadata: true
+
+GRAPH
+  heka (0.2.1)
+    logrotate (>= 0.0.0)
+  logrotate (1.7.0)
