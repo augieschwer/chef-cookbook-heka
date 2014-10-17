@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/augieschwer/chef-cookbook-heka.svg?branch=master)](https://travis-ci.org/augieschwer/chef-cookbook-heka)
+
 Description
 ===========
 
