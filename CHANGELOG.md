@@ -2,6 +2,12 @@
 
 This file is used to list changes made in each version of heka.
 
+## 0.2.2
+
+- Add Test Kitchen support.
+- Add Travis CI build support.
+- Merge PR from MathYourLife to build from source.
+
 ## 0.2.1
 
 - [ISSUE-4] "Don't download the deb package if heka is already installed."

@@ -3,4 +3,3 @@ rvm:
   - 1.9.3
 script:
   - bundle exec rake foodcritic
-  - bundle exec rake serverspec
