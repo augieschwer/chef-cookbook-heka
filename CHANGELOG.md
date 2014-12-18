@@ -2,6 +2,11 @@
 
 This file is used to list changes made in each version of heka.
 
+## 0.2.3
+
+- [ISSUE-14] Increment default install version to 0.8.1
+- [ISSUE-15] Update heka when the version in attributes is newer than the version installed.
+
 ## 0.2.2
 
 - Add Test Kitchen support.

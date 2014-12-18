@@ -4,6 +4,6 @@ DEPENDENCIES
     metadata: true
 
 GRAPH
-  heka (0.2.1)
+  heka (0.2.3)
     logrotate (>= 0.0.0)
   logrotate (1.7.0)

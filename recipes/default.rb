@@ -5,22 +5,36 @@
 
 if platform?("debian", "ubuntu")
 
-	# install the heka package
-	Chef::Log.info("Installing Heka from #{node["heka"]["download"]["remote_src"]}")
+	# Get current version of installed heka package if any.
+	dpkg_query = Mixlib::ShellOut.new("dpkg-query -W -f '${Version}' heka 2>/dev/null")
+	dpkg_query.run_command
+	heka_version = dpkg_query.stdout
+
+	Chef::Log.debug("Currently installed version of heka: #{heka_version}")
+	Chef::Log.debug("Desired version of heka: #{node['heka']['download']['version']}")
+	
+	# Compare currently installed to desired installed based on attributes.
+	if heka_version < node['heka']['download']['version']
+
+		Chef::Log.info("Installing latest Heka from #{node["heka"]["download"]["remote_src"]}")
+
+		remote_file node["heka"]["download"]["remote_file"] do
+			source node["heka"]["download"]["remote_src"]
+			:create_if_missing
+		end
+
+		dpkg_package "heka" do
+			source node["heka"]["download"]["remote_file"]
+			notifies :create, "template[#{node["heka"]["init"]}]"
+		end
+
+	else
+
+		Chef::Log.info("Latest Heka already installed")
+
+	end
 
 	directory node["heka"]["dir"]
-
-	remote_file node["heka"]["download"]["remote_file"] do
-		source node["heka"]["download"]["remote_src"]
-		:create_if_missing
-		not_if { ::File.exists?(node["heka"]["bin"]) }
-	end
-
-	dpkg_package "heka" do
-		source node["heka"]["download"]["remote_file"]
-		notifies :create, "template[#{node["heka"]["init"]}]"
-		not_if { ::File.exists?(node["heka"]["bin"]) }
-	end
 
 	template node["heka"]["init"] do
 		source "heka.conf.erb"
