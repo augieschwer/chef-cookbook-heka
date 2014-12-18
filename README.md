@@ -25,7 +25,7 @@ Attributes
 
 ```ruby
 node['heka']['download']['mirror'] = 'https://github.com/mozilla-services/heka/releases/download/v'
-node['heka']['download']['version'] = '0.7.1'
+node['heka']['download']['version'] = '0.8.1'
 node['heka']['download']['arch'] = 'amd64'
 node['heka']['download']['extension'] = 'deb'
 ```
